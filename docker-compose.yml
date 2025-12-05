@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  trello-powerup:
+    build: .
+    container_name: trello-powerup
+    ports:
+      - "3005:3005"
+    environment:
+      GOOGLE_CLIENT: "YOUR_GOOGLE_CLIENT_ID"
+      GOOGLE_SECRET: "YOUR_GOOGLE_CLIENT_SECRET"
+      REDIRECT_URL: "https://trello.3store.tech/oauth/callback"
+      WAHA_URL: "https://YOUR_WAHA_PUBLIC_URL"
+      WAHA_KEY: "YOUR_WAHA_API_KEY"
+    restart: unless-stopped
